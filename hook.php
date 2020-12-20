@@ -18,3 +18,6 @@
  */
 
 /** @var crisp\core\Plugin $this */
+$this->registerInstallHook(function() {
+    \crisp\api\lists\Cron::create("execute_plugin_cron", json_encode(array("plugin" => "heroku", "data" => "I am data", "name" => "update_heroku")), "5 MINUTE");
+});

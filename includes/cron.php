@@ -25,13 +25,6 @@ if (isset($_CRON)) {
 
 
     \crisp\api\lists\Cron::markAsFinished($_CRON["ID"]);
-    \crisp\api\lists\Cron::deleteOld();
-    \crisp\api\lists\Cron::create("execute_plugin_cron", json_encode(array("plugin" => $_CRON->Data["plugin"], "data" => "I am data", "name" => "update_heroku")), $_CRON["Interval"]);
+    //\crisp\api\lists\Cron::deleteOld();
+    exit;
 }
-
-define('CRISP_CLI', true);
-define('CRISP_API', true);
-define('NO_KMS', true);
-error_reporting(error_reporting() & ~E_NOTICE);
-require_once __DIR__ . "/../../../pixelcatproductions/crisp.php";
-\crisp\api\lists\Cron::create("execute_plugin_cron", json_encode(array("plugin" => "heroku", "data" => "I am data", "name" => "update_heroku")), "5 MINUTE");
