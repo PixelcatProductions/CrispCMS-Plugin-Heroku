@@ -22,7 +22,4 @@ if (isset($_CRON)) {
     $Test = \crisp\api\Config::set($Key, trim(shell_exec("/usr/local/bin/heroku config:get DATABASE_URL -a edit-tosdr-org")));
 
     consoleLog("Setting Config: $Test");
-
-
-    \crisp\api\lists\Cron::markAsFinished($_CRON["ID"]);
 }

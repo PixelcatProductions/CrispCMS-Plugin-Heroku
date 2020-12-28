@@ -8,6 +8,11 @@
     "hookFile": "hook.php",
     "author": "Justin René Back <jback@pixelcatproductions.net>",
     "onInstall": {
+        "createCron": [{
+                "type": "update_heroku",
+                "data": null,
+                "interval": "5 MINUTE"
+            }],
         "createTranslationKeys": {},
         "createKVStorageItems": {
             "database_uri": null
