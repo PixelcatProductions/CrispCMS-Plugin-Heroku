@@ -13,7 +13,7 @@
  */
 if (isset($_CRON)) {
 
-    $Key = "plugin_" . $_CRON["Data"]->plugin . "_database_uri";
+    $Key = "plugin_" . $_CRON["Plugin"] . "_database_uri";
 
     consoleLog($Key);
 
@@ -25,6 +25,4 @@ if (isset($_CRON)) {
 
 
     \crisp\api\lists\Cron::markAsFinished($_CRON["ID"]);
-    //\crisp\api\lists\Cron::deleteOld();
-    exit;
 }
